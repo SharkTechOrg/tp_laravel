@@ -49,7 +49,7 @@
                             <td>
                                 <a href="{{ route('empleados.show', $empleado->id_empleado) }}" class="btn btn-success btn-sm mb-1">Ver</a>
                                 <a href="{{ route('empleados.edit', $empleado->id_empleado) }}" class="btn btn-warning btn-sm mb-1">Editar</a>
-                                <form action="{{ route('empleados.destroy', $empleado->id_empleado) }}" method="POST" style="display: inline;">
+                                <form action="{{ route('empleados.destroy', $empleado->id_empleado) }}" method="POST" style="display: inline;" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
